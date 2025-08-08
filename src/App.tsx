@@ -6,8 +6,8 @@ import GameCard from './components/GameCard'
 function App() {
   const games = [
     {
-      title: 'Connecta 4',
-      description: 'Juego clásico de estrategia donde debes conectar 4 fichas en línea. ¡Desafía a la IA o juega con un amigo!',
+      title: 'Connect 4',
+      description: 'Classic strategy game where you must connect 4 pieces in a row. Challenge the AI or play with a friend!',
       url: '/connect4',
       emoji: '🔴',
       status: 'live' as const,
@@ -15,7 +15,7 @@ function App() {
     },
     {
       title: 'Quest Forge',
-      description: 'Juego de rol clásico con interacción por texto. Crea tu historia, sube de nivel y embárcate en una aventura épica.',
+      description: 'Classic text-based role-playing game. Create your story, level up and embark on an epic adventure.',
       url: '/quest-forge',
       emoji: '⚔️',
       status: 'dev' as const,
@@ -25,7 +25,7 @@ function App() {
 
   return (
     <Layout>
-      <Header title="Games Hub de Javi" />
+      <Header title="Javi's Games Hub" />
       
       <main className="main">
         <section className="games-section">
@@ -46,15 +46,14 @@ function App() {
         
         <section className="about-section">
           <div className="about-content">
-            <h2>Sobre este Hub</h2>
+            <h2>About this Hub</h2>
             <p>
-              Bienvenido a mi colección personal de juegos web. Cada proyecto está desarrollado 
-              con tecnologías modernas y está pensado para ofrecer una experiencia divertida 
-              y desafiante.
+              Welcome to my personal collection of web games. Each project is developed 
+              with modern technologies and designed to offer a fun and challenging experience.
             </p>
             <p>
-              Los juegos están en constante evolución, añadiendo nuevas características y 
-              mejorando la experiencia de usuario.
+              The games are constantly evolving, adding new features and 
+              improving the user experience.
             </p>
           </div>
         </section>

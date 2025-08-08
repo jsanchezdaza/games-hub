@@ -9,10 +9,10 @@ test.describe('Game Cards Interaction', () => {
     // Create a new page promise before clicking
     const newPagePromise = context.waitForEvent('page');
     
-    // Click on the live game (Connecta 4)
-    const connecta4Card = page.getByRole('button', { name: /Jugar Connecta 4/ });
-    await expect(connecta4Card).toBeVisible();
-    await connecta4Card.click();
+    // Click on the live game (Connect 4)
+    const connect4Card = page.getByRole('button', { name: /Play Connect 4/ });
+    await expect(connect4Card).toBeVisible();
+    await connect4Card.click();
     
     // Wait for the new page to open
     const newPage = await newPagePromise;
@@ -20,20 +20,20 @@ test.describe('Game Cards Interaction', () => {
   });
 
   test('should handle keyboard navigation for live games', async ({ page, context }) => {
-    const connecta4Card = page.getByRole('button', { name: /Jugar Connecta 4/ });
-    await connecta4Card.focus();
+    const connect4Card = page.getByRole('button', { name: /Play Connect 4/ });
+    await connect4Card.focus();
     
     // Test Enter key
     const newPagePromise1 = context.waitForEvent('page');
-    await connecta4Card.press('Enter');
+    await connect4Card.press('Enter');
     const newPage1 = await newPagePromise1;
     await expect(newPage1).toHaveURL('/connect4');
     await newPage1.close();
     
     // Test Space key
-    await connecta4Card.focus();
+    await connect4Card.focus();
     const newPagePromise2 = context.waitForEvent('page');
-    await connecta4Card.press(' ');
+    await connect4Card.press(' ');
     const newPage2 = await newPagePromise2;
     await expect(newPage2).toHaveURL('/connect4');
   });
@@ -55,49 +55,50 @@ test.describe('Game Cards Interaction', () => {
   });
 
   test('should display correct hover states for live games', async ({ page }) => {
-    const connecta4Card = page.getByRole('button', { name: /Jugar Connecta 4/ });
+    const connect4Card = page.getByRole('button', { name: /Play Connect 4/ });
     
     // Check if the card has clickable class
-    await expect(connecta4Card).toHaveClass(/clickable/);
+    await expect(connect4Card).toHaveClass(/clickable/);
     
     // Hover over the card
-    await connecta4Card.hover();
+    await connect4Card.hover();
     
     // Should still be visible and maintain its properties
-    await expect(connecta4Card).toBeVisible();
-    await expect(page.getByText('¡Jugar ahora! →')).toBeVisible();
+    await expect(connect4Card).toBeVisible();
+    await expect(page.getByText('Play now! →')).toBeVisible();
   });
 
   test('should display all game card elements correctly', async ({ page }) => {
-    // Test Connecta 4 card elements
-    const connecta4Section = page.locator('.game-card').filter({ hasText: 'Connecta 4' });
-    await expect(connecta4Section.getByText('🔴')).toBeVisible();
-    await expect(connecta4Section.getByText('Connecta 4')).toBeVisible();
-    await expect(connecta4Section.getByText(/Juego clásico de estrategia/)).toBeVisible();
-    await expect(connecta4Section.getByText('🟢 Disponible')).toBeVisible();
-    await expect(connecta4Section.getByText('¡Jugar ahora! →')).toBeVisible();
-    await expect(connecta4Section.getByText('React')).toBeVisible();
-    await expect(connecta4Section.getByText('TypeScript')).toBeVisible();
-    await expect(connecta4Section.getByText('CSS')).toBeVisible();
+    // Test Connect 4 card elements
+    const connect4Section = page.locator('.game-card').filter({ hasText: 'Connect 4' });
+    await expect(connect4Section.getByText('🔴')).toBeVisible();
+    await expect(connect4Section.getByText('Connect 4')).toBeVisible();
+    await expect(connect4Section.getByText(/Classic strategy game/)).toBeVisible();
+    await expect(connect4Section.getByText('🟢 Available')).toBeVisible();
+    await expect(connect4Section.getByText('Play now! →')).toBeVisible();
+    await expect(connect4Section.getByText('React')).toBeVisible();
+    await expect(connect4Section.getByText('TypeScript')).toBeVisible();
+    await expect(connect4Section.getByText('CSS')).toBeVisible();
     
     // Test Quest Forge card elements
     const questForgeSection = page.locator('.game-card').filter({ hasText: 'Quest Forge' });
     await expect(questForgeSection.getByText('⚔️')).toBeVisible();
     await expect(questForgeSection.getByText('Quest Forge')).toBeVisible();
-    await expect(questForgeSection.getByText(/Herramienta para crear/)).toBeVisible();
-    await expect(questForgeSection.getByText('🟡 En desarrollo')).toBeVisible();
+    await expect(questForgeSection.getByText(/Classic text-based role-playing game/)).toBeVisible();
+    await expect(questForgeSection.getByText('🟡 In Development')).toBeVisible();
     await expect(questForgeSection.getByText('React')).toBeVisible();
     await expect(questForgeSection.getByText('TypeScript')).toBeVisible();
     await expect(questForgeSection.getByText('Tailwind CSS')).toBeVisible();
+    await expect(questForgeSection.getByText('Supabase')).toBeVisible();
     
     // Quest Forge should NOT have the play button
-    await expect(questForgeSection.getByText('¡Jugar ahora! →')).not.toBeVisible();
+    await expect(questForgeSection.getByText('Play now! →')).not.toBeVisible();
   });
 
   test('should maintain accessibility standards', async ({ page }) => {
     // Check that live games have proper ARIA labels
-    const connecta4Card = page.getByRole('button', { name: /Jugar Connecta 4/ });
-    await expect(connecta4Card).toHaveAttribute('aria-label');
+    const connect4Card = page.getByRole('button', { name: /Play Connect 4/ });
+    await expect(connect4Card).toHaveAttribute('aria-label');
     
     // Check that non-live games don't have button semantics
     const questForgeCard = page.getByText('Quest Forge').locator('..');

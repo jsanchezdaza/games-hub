@@ -6,27 +6,27 @@ test.describe('Homepage', () => {
   });
 
   test('should have correct page title', async ({ page }) => {
-    await expect(page).toHaveTitle(/Games Hub - Javi Sánchez/);
+    await expect(page).toHaveTitle(/Javi's Games Hub/);
   });
 
   test('should display main header', async ({ page }) => {
-    const header = page.getByRole('heading', { name: '🎮 Games Hub de Javi' });
+    const header = page.getByRole('heading', { name: '🎮 Javi\'s Games Hub' });
     await expect(header).toBeVisible();
   });
 
   test('should display all game cards', async ({ page }) => {
-    await expect(page.getByText('Connecta 4')).toBeVisible();
+    await expect(page.getByText('Connect 4')).toBeVisible();
     await expect(page.getByText('Quest Forge')).toBeVisible();
   });
 
   test('should show correct game statuses', async ({ page }) => {
-    await expect(page.getByText('🟢 Disponible')).toBeVisible();
-    await expect(page.getByText('🟡 En desarrollo')).toBeVisible();
+    await expect(page.getByText('🟢 Available')).toBeVisible();
+    await expect(page.getByText('🟡 In Development')).toBeVisible();
   });
 
   test('should display game descriptions', async ({ page }) => {
-    await expect(page.getByText(/Juego clásico de estrategia/)).toBeVisible();
-    await expect(page.getByText(/Herramienta para crear y gestionar aventuras/)).toBeVisible();
+    await expect(page.getByText(/Classic strategy game/)).toBeVisible();
+    await expect(page.getByText(/Classic text-based role-playing game/)).toBeVisible();
   });
 
   test('should display technology tags', async ({ page }) => {
@@ -37,14 +37,14 @@ test.describe('Homepage', () => {
   });
 
   test('should display about section', async ({ page }) => {
-    await expect(page.getByText('Sobre este Hub')).toBeVisible();
-    await expect(page.getByText(/Bienvenido a mi colección personal/)).toBeVisible();
-    await expect(page.getByText(/Los juegos están en constante evolución/)).toBeVisible();
+    await expect(page.getByText('About this Hub')).toBeVisible();
+    await expect(page.getByText(/Welcome to my personal collection/)).toBeVisible();
+    await expect(page.getByText(/The games are constantly evolving/)).toBeVisible();
   });
 
   test('should display footer with correct information', async ({ page }) => {
     const currentYear = new Date().getFullYear();
-    await expect(page.getByText(`Desarrollado por Javier Sánchez | ${currentYear}`)).toBeVisible();
+    await expect(page.getByText(`Developed by Javier Sánchez | ${currentYear}`)).toBeVisible();
     
     const githubLink = page.getByRole('link', { name: 'GitHub' });
     await expect(githubLink).toHaveAttribute('href', 'https://github.com/jsanchezdaza');
@@ -58,14 +58,14 @@ test.describe('Homepage', () => {
   test('should have responsive layout', async ({ page }) => {
     // Test desktop view
     await page.setViewportSize({ width: 1200, height: 800 });
-    await expect(page.getByText('Games Hub de Javi')).toBeVisible();
+    await expect(page.getByText('Javi\'s Games Hub')).toBeVisible();
     
     // Test tablet view
     await page.setViewportSize({ width: 768, height: 1024 });
-    await expect(page.getByText('Games Hub de Javi')).toBeVisible();
+    await expect(page.getByText('Javi\'s Games Hub')).toBeVisible();
     
     // Test mobile view
     await page.setViewportSize({ width: 375, height: 667 });
-    await expect(page.getByText('Games Hub de Javi')).toBeVisible();
+    await expect(page.getByText('Javi\'s Games Hub')).toBeVisible();
   });
 });

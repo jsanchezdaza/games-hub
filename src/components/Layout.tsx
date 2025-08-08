@@ -9,7 +9,7 @@ export default function Layout({ children }: LayoutProps) {
     <div className="layout">
       {children}
       <footer className="footer">
-        <p>Desarrollado por <strong>Javier Sánchez</strong> | {new Date().getFullYear()}</p>
+        <p>Developed by <strong>Javier Sánchez</strong> | {new Date().getFullYear()}</p>
         <div className="footer-links">
           <a href="https://github.com/jsanchezdaza" target="_blank" rel="noopener noreferrer">
             GitHub

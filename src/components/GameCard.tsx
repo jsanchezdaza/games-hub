@@ -32,10 +32,10 @@ export default function GameCard({ title, description, url, emoji, status, techn
 
   const getStatusText = () => {
     switch (status) {
-      case 'live': return '🟢 Disponible';
-      case 'dev': return '🟡 En desarrollo';
-      case 'coming-soon': return '⏳ Próximamente';
-      default: return 'Estado desconocido';
+      case 'live': return '🟢 Available';
+      case 'dev': return '🟡 In Development';
+      case 'coming-soon': return '⏳ Coming Soon';
+      default: return 'Unknown Status';
     }
   };
 
@@ -46,7 +46,7 @@ export default function GameCard({ title, description, url, emoji, status, techn
       onKeyDown={handleKeyDown}
       tabIndex={status === 'live' ? 0 : undefined}
       role={status === 'live' ? 'button' : undefined}
-      aria-label={status === 'live' ? `Jugar ${title}` : undefined}
+      aria-label={status === 'live' ? `Play ${title}` : undefined}
     >
       <div className="game-card-header">
         <span className="game-emoji">{emoji}</span>
@@ -70,7 +70,7 @@ export default function GameCard({ title, description, url, emoji, status, techn
       
       {status === 'live' && (
         <div className="game-card-footer">
-          <span className="play-text">¡Jugar ahora! →</span>
+          <span className="play-text">Play now! →</span>
         </div>
       )}
     </div>
