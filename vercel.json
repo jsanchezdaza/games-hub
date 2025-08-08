@@ -14,7 +14,7 @@
     },
     {
       "source": "/quest-forge",
-      "destination": "https://conecta4-javisans-projects.vercel.app"
+      "destination": "https://quest-forge-javisans-projects.vercel.app"
     }
   ],
   "headers": [

@@ -8,7 +8,7 @@ function App() {
     {
       title: 'Connecta 4',
       description: 'Juego clásico de estrategia donde debes conectar 4 fichas en línea. ¡Desafía a la IA o juega con un amigo!',
-      url: '/connecta4',
+      url: '/connect4',
       emoji: '🔴',
       status: 'live' as const,
       technologies: ['React', 'TypeScript', 'CSS']
