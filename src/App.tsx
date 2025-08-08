@@ -15,11 +15,11 @@ function App() {
     },
     {
       title: 'Quest Forge',
-      description: 'Herramienta para crear y gestionar aventuras de rol. Diseña campañas épicas con personajes, ubicaciones y misiones.',
+      description: 'Juego de rol clásico con interacción por texto. Crea tu historia, sube de nivel y embárcate en una aventura épica.',
       url: '/quest-forge',
       emoji: '⚔️',
       status: 'dev' as const,
-      technologies: ['React', 'TypeScript', 'Tailwind CSS']
+      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase']
     }
   ];
 
