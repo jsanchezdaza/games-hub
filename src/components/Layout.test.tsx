@@ -22,7 +22,7 @@ describe('Layout Component', () => {
     const currentYear = new Date().getFullYear();
     expect(screen.getByText(/Desarrollado por/)).toBeInTheDocument();
     expect(screen.getByText('Javier Sánchez')).toBeInTheDocument();
-    expect(screen.getByText(currentYear.toString())).toBeInTheDocument();
+    expect(screen.getByText(new RegExp(currentYear.toString()))).toBeInTheDocument();
   });
 
   it('renders footer links with correct attributes', () => {

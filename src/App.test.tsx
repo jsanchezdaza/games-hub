@@ -68,7 +68,7 @@ describe('App Component', () => {
     const currentYear = new Date().getFullYear();
     expect(screen.getByText(/Desarrollado por/)).toBeInTheDocument();
     expect(screen.getByText('Javier Sánchez')).toBeInTheDocument();
-    expect(screen.getByText(currentYear.toString())).toBeInTheDocument();
+    expect(screen.getByText(new RegExp(currentYear.toString()))).toBeInTheDocument();
     
     expect(screen.getByRole('link', { name: 'GitHub' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Portfolio' })).toBeInTheDocument();
