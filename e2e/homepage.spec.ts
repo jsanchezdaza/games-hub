@@ -32,7 +32,7 @@ test.describe('Homepage', () => {
   test('should display technology tags', async ({ page }) => {
     await expect(page.getByText('React').first()).toBeVisible();
     await expect(page.getByText('TypeScript').first()).toBeVisible();
-    await expect(page.getByText('CSS')).toBeVisible();
+    await expect(page.getByText('CSS').first()).toBeVisible();
     await expect(page.getByText('Tailwind CSS')).toBeVisible();
   });
 

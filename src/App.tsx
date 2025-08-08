@@ -27,36 +27,38 @@ function App() {
     <Layout>
       <Header title="Games Hub de Javi" />
       
-      <section className="games-section">
-        <div className="games-grid">
-          {games.map((game, index) => (
-            <GameCard
-              key={index}
-              title={game.title}
-              description={game.description}
-              url={game.url}
-              emoji={game.emoji}
-              status={game.status}
-              technologies={game.technologies}
-            />
-          ))}
-        </div>
-      </section>
-      
-      <section className="about-section">
-        <div className="about-content">
-          <h2>Sobre este Hub</h2>
-          <p>
-            Bienvenido a mi colección personal de juegos web. Cada proyecto está desarrollado 
-            con tecnologías modernas y está pensado para ofrecer una experiencia divertida 
-            y desafiante.
-          </p>
-          <p>
-            Los juegos están en constante evolución, añadiendo nuevas características y 
-            mejorando la experiencia de usuario.
-          </p>
-        </div>
-      </section>
+      <main className="main">
+        <section className="games-section">
+          <div className="games-grid">
+            {games.map((game, index) => (
+              <GameCard
+                key={index}
+                title={game.title}
+                description={game.description}
+                url={game.url}
+                emoji={game.emoji}
+                status={game.status}
+                technologies={game.technologies}
+              />
+            ))}
+          </div>
+        </section>
+        
+        <section className="about-section">
+          <div className="about-content">
+            <h2>Sobre este Hub</h2>
+            <p>
+              Bienvenido a mi colección personal de juegos web. Cada proyecto está desarrollado 
+              con tecnologías modernas y está pensado para ofrecer una experiencia divertida 
+              y desafiante.
+            </p>
+            <p>
+              Los juegos están en constante evolución, añadiendo nuevas características y 
+              mejorando la experiencia de usuario.
+            </p>
+          </div>
+        </section>
+      </main>
     </Layout>
   )
 }
