@@ -6,7 +6,7 @@ test.describe('Homepage', () => {
   });
 
   test('should have correct page title', async ({ page }) => {
-    await expect(page).toHaveTitle(/Vite \+ React/);
+    await expect(page).toHaveTitle(/Games Hub - Javi Sánchez/);
   });
 
   test('should display main header', async ({ page }) => {

@@ -16,7 +16,7 @@ test.describe('Game Cards Interaction', () => {
     
     // Wait for the new page to open
     const newPage = await newPagePromise;
-    await expect(newPage).toHaveURL('/connecta4');
+    await expect(newPage).toHaveURL('/connect4');
   });
 
   test('should handle keyboard navigation for live games', async ({ page, context }) => {
@@ -27,7 +27,7 @@ test.describe('Game Cards Interaction', () => {
     const newPagePromise1 = context.waitForEvent('page');
     await connecta4Card.press('Enter');
     const newPage1 = await newPagePromise1;
-    await expect(newPage1).toHaveURL('/connecta4');
+    await expect(newPage1).toHaveURL('/connect4');
     await newPage1.close();
     
     // Test Space key
@@ -35,7 +35,7 @@ test.describe('Game Cards Interaction', () => {
     const newPagePromise2 = context.waitForEvent('page');
     await connecta4Card.press(' ');
     const newPage2 = await newPagePromise2;
-    await expect(newPage2).toHaveURL('/connecta4');
+    await expect(newPage2).toHaveURL('/connect4');
   });
 
   test('should not be clickable for development games', async ({ page }) => {

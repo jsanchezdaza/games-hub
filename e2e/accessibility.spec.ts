@@ -72,7 +72,7 @@ test.describe('Accessibility Tests', () => {
     await expect(page.getByText('Games Hub de Javi')).toBeVisible();
     await expect(page.getByText('🟢 Disponible')).toBeVisible();
     await expect(page.getByText('🟡 En desarrollo')).toBeVisible();
-    await expect(page.getByText('Conecta 4')).toBeVisible();
+    await expect(page.getByText('Connecta 4')).toBeVisible();
     await expect(page.getByText('Quest Forge')).toBeVisible();
   });
 
@@ -102,7 +102,7 @@ test.describe('Accessibility Tests', () => {
     
     // Technology tags should be readable
     const techTags = page.locator('.tech-tag');
-    await expect(techTags).toHaveCount(5); // React(2), TypeScript(2), CSS(1), Tailwind CSS(1) - total 6, but checking at least 5
+    await expect(techTags).toHaveCount(6); // React(2), TypeScript(2), CSS(1), Tailwind CSS(1) - total 6
     
     for (const tag of await techTags.all()) {
       await expect(tag).toBeVisible();
