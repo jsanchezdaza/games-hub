@@ -2,19 +2,19 @@
   "rewrites": [
     {
       "source": "/connecta4/(.*)",
-      "destination": "https://connecta4-internal.vercel.app/$1"
+      "destination": "https://conecta4-a0eb71925-javisans-projects.vercel.app/$1"
     },
     {
       "source": "/connecta4",
-      "destination": "https://connecta4-internal.vercel.app/"
+      "destination": "https://conecta4-a0eb71925-javisans-projects.vercel.app/"
     },
     {
       "source": "/quest-forge/(.*)",
-      "destination": "https://quest-forge-internal.vercel.app/$1"
+      "destination": "https://quest-forge-7hmowkqfo-javisans-projects.vercel.app/$1"
     },
     {
       "source": "/quest-forge",
-      "destination": "https://quest-forge-internal.vercel.app/"
+      "destination": "https://quest-forge-7hmowkqfo-javisans-projects.vercel.app/"
     }
   ],
   "headers": [
