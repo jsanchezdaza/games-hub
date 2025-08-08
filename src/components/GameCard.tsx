@@ -14,20 +14,27 @@ export default function GameCard({ title, description, url, emoji, status, techn
     }
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleClick();
+    }
+  };
+
   const getStatusColor = () => {
     switch (status) {
-      case 'live': return '#10b981';
-      case 'dev': return '#f59e0b';
-      case 'coming-soon': return '#6b7280';
-      default: return '#6b7280';
+      case 'live': return 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+      case 'dev': return 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)';
+      case 'coming-soon': return 'linear-gradient(135deg, #6b7280 0%, #4b5563 100%)';
+      default: return 'linear-gradient(135deg, #6b7280 0%, #4b5563 100%)';
     }
   };
 
   const getStatusText = () => {
     switch (status) {
-      case 'live': return 'Disponible';
-      case 'dev': return 'En desarrollo';
-      case 'coming-soon': return 'Próximamente';
+      case 'live': return '🟢 Disponible';
+      case 'dev': return '🟡 En desarrollo';
+      case 'coming-soon': return '⏳ Próximamente';
       default: return 'Estado desconocido';
     }
   };
@@ -36,10 +43,14 @@ export default function GameCard({ title, description, url, emoji, status, techn
     <div 
       className={`game-card ${status === 'live' ? 'clickable' : ''}`}
       onClick={handleClick}
+      onKeyDown={handleKeyDown}
+      tabIndex={status === 'live' ? 0 : undefined}
+      role={status === 'live' ? 'button' : undefined}
+      aria-label={status === 'live' ? `Jugar ${title}` : undefined}
     >
       <div className="game-card-header">
         <span className="game-emoji">{emoji}</span>
-        <div className="game-status" style={{ backgroundColor: getStatusColor() }}>
+        <div className="game-status" style={{ background: getStatusColor() }}>
           {getStatusText()}
         </div>
       </div>
