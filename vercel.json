@@ -1,20 +1,20 @@
 {
   "rewrites": [
     {
-      "source": "/connecta4/(.*)",
-      "destination": "https://conecta4-a0eb71925-javisans-projects.vercel.app/$1"
+      "source": "/connect4/(.*)",
+      "destination": "https://conecta4-javisans-projects.vercel.app"
     },
     {
-      "source": "/connecta4",
-      "destination": "https://conecta4-a0eb71925-javisans-projects.vercel.app/"
+      "source": "/connect4",
+      "destination": "https://conecta4-javisans-projects.vercel.app"
     },
     {
       "source": "/quest-forge/(.*)",
-      "destination": "https://quest-forge-7hmowkqfo-javisans-projects.vercel.app/$1"
+      "destination": "https://quest-forge-javisans-projects.vercel.app"
     },
     {
       "source": "/quest-forge",
-      "destination": "https://quest-forge-7hmowkqfo-javisans-projects.vercel.app/"
+      "destination": "https://conecta4-javisans-projects.vercel.app"
     }
   ],
   "headers": [
