@@ -57,6 +57,17 @@
 
 **If any refactoring is needed, do it BEFORE the commit. Keep the commit focused and clean.**
 
+## Git Workflow (MANDATORY)
+
+**ALWAYS show files before committing:**
+
+1. **Show Git Status** - Run `git status` to display all modified/added/deleted files
+2. **Show File Changes** - Run `git diff` for staged changes and `git diff --staged` if needed
+3. **Review Files** - Present the list of files that will be included in the commit
+4. **Confirm Changes** - Let user review what will be committed before executing `git commit`
+
+This ensures transparency and allows review of exactly what changes are being committed to the repository.
+
 ## Development Commands
 
 - **Start development server**: `pnpm dev`
