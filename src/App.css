@@ -31,19 +31,14 @@ body, html {
 
 /* Header */
 .header {
-  background: linear-gradient(135deg, #ff0080 0%, #ff8c00 25%, #40e0d0 50%, #ee82ee 75%, #ff0080 100%);
-  background-size: 400% 400%;
-  animation: gradientShift 4s ease infinite;
+  background: #1a1f3a;
   color: white;
   padding: 2rem 0;
   margin: 0 0 3rem 0;
   text-align: center;
   position: relative;
-  overflow: hidden;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  border-bottom: 8px solid;
-  border-image: linear-gradient(45deg, #ff0080, #40e0d0, #ff8c00) 1;
+  border-bottom: 4px solid #40e0d0;
+  box-shadow: 0 4px 0px rgba(0, 0, 0, 0.3);
 }
 
 .header::before {
@@ -55,20 +50,13 @@ body, html {
   bottom: 0;
   background-image: 
     repeating-linear-gradient(
-      0deg,
+      45deg,
       transparent,
       transparent 2px,
-      rgba(255, 255, 255, 0.03) 2px,
-      rgba(255, 255, 255, 0.03) 4px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 2px,
-      rgba(255, 255, 255, 0.03) 2px,
-      rgba(255, 255, 255, 0.03) 4px
+      rgba(64, 224, 208, 0.1) 2px,
+      rgba(64, 224, 208, 0.1) 4px
     );
-  animation: scanlines 0.1s linear infinite;
+  pointer-events: none;
 }
 
 .header-content {
@@ -85,11 +73,12 @@ body, html {
   font-weight: normal;
   margin: 0 0 1rem 0;
   text-shadow: 
-    4px 4px 0px #000,
-    8px 8px 0px rgba(0, 0, 0, 0.5);
-  color: #fff;
-  animation: pixelGlow 2s ease-in-out infinite alternate;
+    3px 3px 0px #000,
+    6px 6px 0px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(64, 224, 208, 0.5);
+  color: #40e0d0;
   line-height: 1.2;
+  animation: titleGlow 3s ease-in-out infinite alternate;
 }
 
 /* Games Section */
@@ -351,14 +340,14 @@ body, html {
 
 /* Footer */
 .footer {
-  background: linear-gradient(135deg, #000 0%, #1a1f3a 100%);
+  background: #1a1f3a;
   color: #fff;
   padding: 2rem 0;
   text-align: center;
   margin-top: auto;
-  border-top: 4px solid;
-  border-image: linear-gradient(45deg, #ff0080, #40e0d0, #ff8c00) 1;
+  border-top: 4px solid #40e0d0;
   position: relative;
+  box-shadow: 0 -4px 0px rgba(0, 0, 0, 0.3);
 }
 
 .footer::before {
@@ -368,8 +357,8 @@ body, html {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #ff0080 0%, #40e0d0 50%, #ff8c00 100%);
-  animation: pixelPulse 2s ease infinite;
+  background: #40e0d0;
+  opacity: 0.8;
 }
 
 .footer p {
@@ -455,6 +444,22 @@ body, html {
 }
 
 /* Pixel Art Animations */
+@keyframes titleGlow {
+  0% { 
+    text-shadow: 
+      3px 3px 0px #000,
+      6px 6px 0px rgba(0, 0, 0, 0.5),
+      0 0 20px rgba(64, 224, 208, 0.5);
+  }
+  100% { 
+    text-shadow: 
+      3px 3px 0px #000,
+      6px 6px 0px rgba(0, 0, 0, 0.5),
+      0 0 30px rgba(64, 224, 208, 0.8),
+      0 0 40px rgba(64, 224, 208, 0.6);
+  }
+}
+
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
