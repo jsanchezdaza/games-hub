@@ -15,8 +15,8 @@ test.describe('Homepage', () => {
   });
 
   test('should display all game cards', async ({ page }) => {
-    await expect(page.getByText('Connect 4')).toBeVisible();
-    await expect(page.getByText('Quest Forge')).toBeVisible();
+    await expect(page.getByRole('heading', { level: 3, name: 'Connect 4' })).toBeVisible();
+    await expect(page.getByRole('heading', { level: 3, name: 'Quest Forge' })).toBeVisible();
   });
 
   test('should show correct game statuses', async ({ page }) => {
@@ -58,14 +58,14 @@ test.describe('Homepage', () => {
   test('should have responsive layout', async ({ page }) => {
     // Test desktop view
     await page.setViewportSize({ width: 1200, height: 800 });
-    await expect(page.getByText('Javi\'s Games Hub')).toBeVisible();
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
     
     // Test tablet view
     await page.setViewportSize({ width: 768, height: 1024 });
-    await expect(page.getByText('Javi\'s Games Hub')).toBeVisible();
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
     
     // Test mobile view
     await page.setViewportSize({ width: 375, height: 667 });
-    await expect(page.getByText('Javi\'s Games Hub')).toBeVisible();
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
   });
 });

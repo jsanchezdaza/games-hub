@@ -4,7 +4,7 @@ interface HeaderProps {
 
 export default function Header({ title }: HeaderProps) {
   return (
-    <header className="header">
+    <header className="header" role="banner">
       <div className="header-content">
         <h1 className="title">🎮 {title}</h1>
       </div>

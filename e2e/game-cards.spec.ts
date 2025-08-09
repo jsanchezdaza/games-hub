@@ -72,7 +72,7 @@ test.describe('Game Cards Interaction', () => {
     // Test Connect 4 card elements
     const connect4Section = page.locator('.game-card').filter({ hasText: 'Connect 4' });
     await expect(connect4Section.getByText('🔴')).toBeVisible();
-    await expect(connect4Section.getByText('Connect 4')).toBeVisible();
+    await expect(connect4Section.getByRole('heading', { level: 3, name: 'Connect 4' })).toBeVisible();
     await expect(connect4Section.getByText(/Classic strategy game/)).toBeVisible();
     await expect(connect4Section.getByText('🟢 Available')).toBeVisible();
     await expect(connect4Section.getByText('Play now! →')).toBeVisible();
@@ -83,7 +83,7 @@ test.describe('Game Cards Interaction', () => {
     // Test Quest Forge card elements
     const questForgeSection = page.locator('.game-card').filter({ hasText: 'Quest Forge' });
     await expect(questForgeSection.getByText('⚔️')).toBeVisible();
-    await expect(questForgeSection.getByText('Quest Forge')).toBeVisible();
+    await expect(questForgeSection.getByRole('heading', { level: 3, name: 'Quest Forge' })).toBeVisible();
     await expect(questForgeSection.getByText(/Classic text-based role-playing game/)).toBeVisible();
     await expect(questForgeSection.getByText('🟡 In Development')).toBeVisible();
     await expect(questForgeSection.getByText('React')).toBeVisible();

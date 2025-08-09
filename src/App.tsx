@@ -27,7 +27,7 @@ function App() {
     <Layout>
       <Header title="Javi's Games Hub" />
       
-      <main className="main">
+      <main className="main" role="main">
         <section className="games-section">
           <div className="games-grid">
             {games.map((game, index) => (

@@ -8,7 +8,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="layout">
       {children}
-      <footer className="footer">
+      <footer className="footer" role="contentinfo">
         <p>Developed by <strong>Javier Sánchez</strong> | {new Date().getFullYear()}</p>
         <div className="footer-links">
           <a href="https://github.com/jsanchezdaza" target="_blank" rel="noopener noreferrer">
