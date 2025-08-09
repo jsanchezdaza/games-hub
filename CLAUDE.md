@@ -73,4 +73,21 @@ This ensures transparency and allows review of exactly what changes are being co
 - **Start development server**: `pnpm dev`
 - **Build for production**: `pnpm build`
 - **Lint code**: `pnpm lint`
+- **Run E2E tests**: `pnpm test:e2e`
 - **Preview production build**: `pnpm preview`
+
+## Pre-Commit Testing (MANDATORY)
+
+**BEFORE every commit, ALL tests must pass:**
+
+1. **Run lint**: `pnpm lint` - Must pass with zero errors
+2. **Run build**: `pnpm build` - Must complete successfully  
+3. **Run E2E tests**: `pnpm test:e2e` - All tests must pass
+
+**NO exceptions.** If any command fails, fix the issues before committing. This ensures:
+- Code quality and consistency
+- No broken functionality reaches production
+- CI pipeline always succeeds
+- Deployment process runs smoothly
+
+The CI pipeline will fail if these standards aren't met locally first.
