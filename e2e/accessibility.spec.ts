@@ -69,11 +69,11 @@ test.describe('Accessibility Tests', () => {
   test('should have sufficient color contrast', async ({ page }) => {
     // This is a basic check - in a real project, you might use axe-playwright
     // Here we just verify that text elements are visible
-    await expect(page.getByText('Javi\'s Games Hub')).toBeVisible();
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
     await expect(page.getByText('🟢 Available')).toBeVisible();
     await expect(page.getByText('🟡 In Development')).toBeVisible();
-    await expect(page.getByText('Connect 4')).toBeVisible();
-    await expect(page.getByText('Quest Forge')).toBeVisible();
+    await expect(page.getByRole('heading', { level: 3, name: 'Connect 4' })).toBeVisible();
+    await expect(page.getByRole('heading', { level: 3, name: 'Quest Forge' })).toBeVisible();
   });
 
   test('should handle focus management correctly', async ({ page }) => {
@@ -102,7 +102,7 @@ test.describe('Accessibility Tests', () => {
     
     // Technology tags should be readable
     const techTags = page.locator('.tech-tag');
-    await expect(techTags).toHaveCount(6); // React(2), TypeScript(2), CSS(1), Tailwind CSS(1) - total 6
+    await expect(techTags).toHaveCount(7); // React(2), TypeScript(2), CSS(1), Tailwind CSS(1), Supabase(1) - total 7
     
     for (const tag of await techTags.all()) {
       await expect(tag).toBeVisible();
