@@ -8,7 +8,7 @@ function App() {
     {
       title: 'Connect 4',
       description: 'Classic strategy game where you must connect 4 pieces in a row. Challenge the AI or play with a friend!',
-      url: 'https://conecta4-murex.vercel.app',
+      url: 'https://connect4.games.javisan.dev',
       emoji: '🔴',
       status: 'live' as const,
       technologies: ['React', 'TypeScript', 'CSS']
@@ -16,7 +16,7 @@ function App() {
     {
       title: 'Quest Forge',
       description: 'Classic text-based role-playing game. Create your story, level up and embark on an epic adventure.',
-      url: '/quest-forge',
+      url: 'https://quest-forge.games.javisan.dev',
       emoji: '⚔️',
       status: 'dev' as const,
       technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase']
