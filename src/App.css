@@ -5,15 +5,19 @@
   image-rendering: crisp-edges;
 }
 
+/* Reset margins and padding */
+body, html {
+  margin: 0;
+  padding: 0;
+  background: #0a0e27;
+}
+
 /* Layout */
 .layout {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   background: #0a0e27;
-  background-image: 
-    radial-gradient(circle at 25% 25%, #1a1f3a 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, #2a2f4a 0%, transparent 50%);
   font-family: 'Orbitron', monospace;
 }
 
