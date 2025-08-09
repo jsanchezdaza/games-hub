@@ -8,7 +8,7 @@ function App() {
     {
       title: 'Connect 4',
       description: 'Classic strategy game where you must connect 4 pieces in a row. Challenge the AI or play with a friend!',
-      url: '/connect4',
+      url: 'https://conecta4-murex.vercel.app',
       emoji: '🔴',
       status: 'live' as const,
       technologies: ['React', 'TypeScript', 'CSS']
