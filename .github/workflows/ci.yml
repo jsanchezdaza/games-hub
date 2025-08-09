@@ -99,42 +99,9 @@ jobs:
         path: playwright-report/
         retention-days: 30
 
-  deploy-preview:
-    runs-on: ubuntu-latest
-    needs: [test, e2e-tests]
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-
-    steps:
-    - uses: actions/checkout@v4
-
-    - name: Use Node.js 20.x
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20.x
-
-    - name: Setup pnpm
-      uses: pnpm/action-setup@v2
-      with:
-        version: latest
-
-    - name: Install dependencies
-      run: pnpm install --frozen-lockfile
-
-    - name: Build project
-      run: pnpm build
-
-    - name: Deploy to Vercel Preview
-      uses: amondnet/vercel-action@v25
-      with:
-        vercel-token: ${{ secrets.VERCEL_TOKEN }}
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-        vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-        working-directory: ./
-
   deploy-production:
     runs-on: ubuntu-latest
-    needs: [test, e2e-tests, deploy-preview]
+    needs: [test, e2e-tests]
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
 
     steps:
